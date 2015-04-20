@@ -2,6 +2,7 @@ package proyectoMatematicas;
 
 import java.util.ArrayList;
 
+import proyectoMatematicas.juegos.MayorMenorIgual;
 import proyectoMatematicas.usuarios.Administrador;
 import proyectoMatematicas.usuarios.Alumno;
 import proyectoMatematicas.usuarios.Profesor;
@@ -39,10 +40,9 @@ public class JuegoMatesEDU {
 			if (comprobarUsuario(nom, cont, arrayUsuarios) == 1) {
 				lanzarMenuAdministrador();
 			} else if (comprobarUsuario(nom, cont, arrayUsuarios) == 2) {
-				//lanzarMenuProfesor();
+				lanzarMenuProfesor();
 			} else if (comprobarUsuario(nom, cont, arrayUsuarios) == 3) {
-				//lanzarMenuAlumno();
-
+				lanzarMenuAlumno();
 			} else
 				System.out.println("El usuario introducido no existe");
 
@@ -80,8 +80,7 @@ public class JuegoMatesEDU {
 		System.out.println("+----------------------------------------+");
 		System.out.println("+        Bienvenido Alumno             +");
 		System.out.println("+----------------------------------------+");
-		System.out.println("\t\t 1. Juego mayor menor igual ");
-		
+		System.out.println("\t\t 1. Mayor menor igual");
 	}
 
 	public static void lanzarMenuAdministrador() {
@@ -122,6 +121,33 @@ public class JuegoMatesEDU {
 			case 2:((Profesor) JuegoMatesEDU.usuario).borrarAlumno(JuegoMatesEDU.arrayUsuarios);break; 
 			case 3:((Profesor) JuegoMatesEDU.usuario).modificarAlumno(JuegoMatesEDU.arrayUsuarios);break; 
 			case 4:((Profesor) JuegoMatesEDU.usuario).listarAlumnos(JuegoMatesEDU.arrayUsuarios);break; 
+			default: System.out.println();
+			System.out.println("Gracias por jugar a este juego... ^_^");
+			
+		}
+		
+	}
+	// menu alumno
+	public static void lanzarMenuAlumno() {
+		int opcion = 0;
+
+		// Escribimos el menu
+		escribirMenuAlumno();
+
+		// Obtenemos la opción
+		opcion = Utilidades.leerEntero();
+
+		// Comprobamos que la opción sea alguno de los valores permitidos
+		switch (opcion)
+		{
+			case 1: MayorMenorIgual.main(null);
+			break;
+			case 2:((Profesor) JuegoMatesEDU.usuario).borrarAlumno(JuegoMatesEDU.arrayUsuarios);
+			break; 
+			case 3:((Profesor) JuegoMatesEDU.usuario).modificarAlumno(JuegoMatesEDU.arrayUsuarios);
+			break; 
+			case 4:((Profesor) JuegoMatesEDU.usuario).listarAlumnos(JuegoMatesEDU.arrayUsuarios);
+			break; 
 			default: System.out.println();
 			System.out.println("Gracias por jugar a este juego... ^_^");
 			
