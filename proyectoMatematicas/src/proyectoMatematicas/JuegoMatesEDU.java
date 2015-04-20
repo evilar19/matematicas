@@ -76,6 +76,13 @@ public class JuegoMatesEDU {
 		System.out.println("\t\t 4. Consultar listado de alumnos");
 		System.out.println("\t\t 5. Cerrar sesion");
 	}
+	private static void escribirMenuAlumno() {
+		System.out.println("+----------------------------------------+");
+		System.out.println("+        Bienvenido Alumno             +");
+		System.out.println("+----------------------------------------+");
+		System.out.println("\t\t 1. Juego mayor menor igual ");
+		
+	}
 
 	public static void lanzarMenuAdministrador() {
 		int opcion = 0;
